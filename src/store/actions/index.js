@@ -1,7 +1,10 @@
 import {ISLOADING} from '../types/index';
 
-export const getUsers = ()=>{
-    return (dispatch) =>{
-        dispatch({type:ISLOADING});
+export const isLoader = ()=>{
+    return function (dispatch){
+        return setTimeout(()=>{
+
+            dispatch({type:ISLOADING});
+        })
     }
 }

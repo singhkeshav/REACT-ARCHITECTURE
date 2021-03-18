@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
-import DashboardLayoutRoute from '../../shared/layout/dashboard.layout';
+const DashboardLayoutRoute = lazy(() => import('../../shared/layout/dashboard.layout'));
 const UserDashboard = lazy(() => import('./page/user/user.dashboard'));
 const HomeDashboard = lazy(() => import('./page/home/home.dashboard'));
 const DashboardModules = ({match}) => {

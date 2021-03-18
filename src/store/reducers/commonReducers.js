@@ -11,7 +11,7 @@ const commonReducres = (state = INIT_STATE, action) => {
         case ISLOADING:
             return{
                 ...state,
-                isLoading: action.isLoading
+                isLoading: !state.isLoading
             }
         case isError:
         return{

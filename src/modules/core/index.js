@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
-import Corelayout from '../../shared/layout/home-layout';
+const Corelayout =  lazy(() => import('../../shared/layout/home-layout'));
 const Login = lazy(() => import('./page/Login'));
 const Aboutus = lazy(() => import('./page/Aboutus'));
 const Home = lazy(() => import('./page/Home'));
