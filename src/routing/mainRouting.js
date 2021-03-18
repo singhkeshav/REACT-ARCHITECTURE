@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,16 +10,18 @@ const CoreModules = lazy(()=> import('../modules/core'));
 const DashboardModules = lazy(()=> import('../modules/dashboard'));
 const MainRouting = () => {
     return (
-        <Suspense fallback={<p>Loading...</p>}>
-        <Router>
-            <Switch>
-                <Route exact path="/"  component={CoreModules}></Route>
-                <Route exact path="/dashboard"  component={DashboardModules}></Route>
-                <Route exact path="*" component={CoreModules}></Route>
-
-            </Switch>
-        </Router>
-    </Suspense>
+         <Suspense fallback={<p>Loading...</p>}>
+            <Router>
+                <Switch>
+                    <Route  path="/"  component={CoreModules}  />
+                </Switch>
+              </Router>
+             <Router>   
+                <Switch>
+                   <Route  path="/dashboard"  component={DashboardModules}  />
+                </Switch>
+            </Router>
+        </Suspense>
     )
 }
 

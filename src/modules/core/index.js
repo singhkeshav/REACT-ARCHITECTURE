@@ -1,28 +1,20 @@
 import React, { lazy, Suspense } from "react";
 import {
     BrowserRouter as Router,
-    Switch,
-    Route
+    Switch
 } from "react-router-dom";
-import Header from "./shared/Header/Header";
-
-
+import Corelayout from '../../shared/layout/home-layout';
 const Login = lazy(() => import('./page/Login'));
 const Aboutus = lazy(() => import('./page/Aboutus'));
 const Home = lazy(() => import('./page/Home'));
-const coreModules = () => {
+const coreModules = ({ match }) => {
     return (
         <Suspense fallback={<p>Loading...</p>}>
-            <Header />
             <Router>
                 <Switch>
-                    <Route exact path="/" > <Home/></Route>
-                    <Route path="/about">
-                        <Aboutus />
-                    </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
+                    <Corelayout path={match.url} component={Home} exact={true} />
+                    <Corelayout path={match.url + "about"} component={Aboutus} exact={true} />
+                    <Corelayout path={match.url + "login"} component={Login} exact={true} />
                 </Switch>
             </Router>
         </Suspense>
