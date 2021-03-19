@@ -12,7 +12,7 @@ const Maincard = () => {
         setImages(res['data']);
       }
     }).catch(ex => {
-      console.error(ex.message)
+  
     })
   }, [])
  // const classes = useStyles();

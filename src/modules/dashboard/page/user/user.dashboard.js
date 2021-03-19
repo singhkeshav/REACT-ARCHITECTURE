@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { isLoader } from '../../../../store/actions';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
