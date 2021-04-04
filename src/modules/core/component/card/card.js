@@ -1,4 +1,4 @@
-import {   Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import React from 'react';
 import useStyles from './card.style';
 
@@ -8,7 +8,7 @@ const Card = (props) => {
         <>
             <Grid item xs={12} sm={6} md={2} lg={2} className={classes.cardItem} >
                 <Typography variant="h6" gutterBottom>
-                   {props.title}
+                    {props.title}
                 </Typography>
             </Grid>
 

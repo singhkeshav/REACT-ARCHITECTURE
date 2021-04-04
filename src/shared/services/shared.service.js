@@ -1,4 +1,4 @@
-import Env from '../../env';
+
 import CoreService from './core.service';
 
 
@@ -8,7 +8,9 @@ class SharedService extends CoreService {
       return  this.post('users',data);
     }
     
-   
+   getUsers(){
+     return this.get('^thirdparty^/https://jsonplaceholder.typicode.com/users');
+   }
 }
 
 export default new SharedService();

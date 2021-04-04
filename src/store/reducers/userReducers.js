@@ -10,7 +10,7 @@ const userReducres = (state = INIT_STATE, action) => {
         case GET_USERS:
             return{
                 ...state,
-                users: action.payload.users
+                users: action.payload
             }
         case GET_USER:
         return{
